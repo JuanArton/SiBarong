@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SiBarong</string>
+    <string name="app_name_space">Si Barong</string>
+    <string name="paste_from_clipboard">Paste clipboard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="analyze">Analyze</string>
+    <string name="history">History</string>
+</resources>
