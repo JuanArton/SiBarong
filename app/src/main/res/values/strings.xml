@@ -4,6 +4,8 @@
     <string name="paste_from_clipboard">Paste clipboard</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="analyze">Analyze</string>
-    <string name="history">History</string>
+    <string name="analyze">Scan</string>
+    <string name="history">Riwayat</string>
+    <string name="percentage">70%</string>
+    <string name="sample_description_text">Sample description text</string>
 </resources>
