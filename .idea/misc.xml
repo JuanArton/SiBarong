@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/akhma/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/activity_list_item.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/akhma/Desktop/BANGKIT/Capstone/SiBarong-Add-API/app/src/main/res/layout/fragment_history.xml" value="0.264" />
+        <entry key="..\:/Users/akhma/Desktop/BANGKIT/Capstone/SiBarong-Add-API/app/src/main/res/layout/item_view.xml" value="0.2591240875912409" />
         <entry key="app/src/main/res/drawable/clipboard_icon.xml" value="0.37447916666666664" />
         <entry key="app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.37447916666666664" />
         <entry key="app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.37447916666666664" />
@@ -10,10 +13,11 @@
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.37447916666666664" />
         <entry key="app/src/main/res/drawable/roundedcorner.xml" value="0.37447916666666664" />
         <entry key="app/src/main/res/drawable/stroke.xml" value="0.37447916666666664" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17426545086119555" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/bottomsheet.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/fragment_analyze.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/fragment_analyze.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/menu/navigation.xml" value="0.35833333333333334" />
       </map>
     </option>

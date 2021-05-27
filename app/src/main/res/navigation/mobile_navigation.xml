@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_analyze"
-        android:name="com.topibatu.sibarong.AnalyzeFragment"
+        android:name="com.topibatu.sibarong.fragments.analyze.AnalyzeFragment"
         android:label="@string/analyze"
         tools:layout="@layout/fragment_analyze" />
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.topibatu.sibarong.HistoryFragment"
+        android:name="com.topibatu.sibarong.fragments.HistoryFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_history" />
 </navigation>
