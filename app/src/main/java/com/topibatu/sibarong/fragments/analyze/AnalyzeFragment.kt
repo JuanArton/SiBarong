@@ -54,15 +54,9 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
                     data.news
                 )
                 analyzeViewModel.insertText(dataHistory)
-//                Log.d("DAta PARcel to Entity", dataParcelToEntity(data).toString())
             })
         }
     }
-
-//    fun dataParcelToEntity(dataParcel: DataParcel) = HistoryEntity(
-//        id = 0,
-//        text = dataParcel.news
-//    )
 
 
     private fun setBottomSheet(state: Int){

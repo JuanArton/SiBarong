@@ -11,9 +11,5 @@ class AnalyzeViewModel (private val repositoryInterface: RepositoryInterface): V
 
     fun insertText(historyEntity: HistoryEntity) = repositoryInterface.insertText(historyEntity)
 
-    fun deleteHistory(historyEntity: HistoryEntity) = repositoryInterface.deleteHistory(historyEntity)
 
-    fun getAllHistory() : LiveData<List<HistoryEntity>> = repositoryInterface.getAllHistory()
-
-    fun deleteFromTable() = repositoryInterface.deleteFromTable()
 }
