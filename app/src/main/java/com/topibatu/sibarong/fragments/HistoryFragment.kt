@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.topibatu.sibarong.adapter.RecyclerViewAdapter
 import com.topibatu.sibarong.databinding.FragmentHistoryBinding
 import com.topibatu.sibarong.fragments.analyze.AnalyzeViewModel
+import com.topibatu.sibarong.fragments.fragment.HistoryViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HistoryFragment : Fragment() {
     private lateinit var binding: FragmentHistoryBinding
-    private val viewModel: AnalyzeViewModel by viewModel()
+    private val viewModel: HistoryViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,8 +50,6 @@ class HistoryFragment : Fragment() {
                 }
             })
         }
-        activity?.actionBar?.show()
-        activity?.actionBar?.title = "History"
     }
 
     private fun setup(){
