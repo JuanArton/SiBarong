@@ -1,10 +1,9 @@
 package com.topibatu.sibarong.injection
 
-import android.provider.ContactsContract
 import androidx.room.Room
 import com.topibatu.sibarong.database.Database
-import com.topibatu.sibarong.database.DatabaseDao
 import com.topibatu.sibarong.fragments.analyze.AnalyzeViewModel
+import com.topibatu.sibarong.fragments.fragment.HistoryViewModel
 import com.topibatu.sibarong.repository.RepositoryInterface
 import com.topibatu.sibarong.repository.SiBarongRepository
 import com.topibatu.sibarong.repository.local.LocalDataSource
@@ -28,6 +27,7 @@ val repositoryModule = module {
 
 val viewModelModule = module {
     viewModel { AnalyzeViewModel(get()) }
+    viewModel { HistoryViewModel(get()) }
 }
 
 val databaseModule = module {
