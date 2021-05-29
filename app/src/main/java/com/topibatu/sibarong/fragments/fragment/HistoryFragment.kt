@@ -49,8 +49,6 @@ class HistoryFragment : Fragment() {
                 }
             })
         }
-        activity?.actionBar?.show()
-        activity?.actionBar?.title = "History"
     }
 
     private fun setup(){
