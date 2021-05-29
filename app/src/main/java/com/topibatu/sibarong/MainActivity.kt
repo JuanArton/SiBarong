@@ -1,25 +1,13 @@
 package com.topibatu.sibarong
 
 import android.os.Bundle
-import android.util.JsonReader
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.JsonParser
-import com.topibatu.sibarong.api.API
-import com.topibatu.sibarong.api.DataParcel
 import com.topibatu.sibarong.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.json.JSONException
-import org.json.JSONObject
-import org.json.JSONStringer
-import retrofit2.await
 
 class MainActivity : AppCompatActivity() {
 

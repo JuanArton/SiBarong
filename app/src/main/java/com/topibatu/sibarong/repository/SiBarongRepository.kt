@@ -6,6 +6,7 @@ import com.topibatu.sibarong.api.DataParcel
 import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.repository.local.LocalDataSource
 import com.topibatu.sibarong.repository.remote.RemoteDataSource
+import com.topibatu.sibarong.utils.DataMapper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
