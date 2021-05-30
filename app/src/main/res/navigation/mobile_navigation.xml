@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.topibatu.sibarong.fragments.HistoryFragment"
+        android:name="com.topibatu.sibarong.fragments.fragment.HistoryFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_history" />
 </navigation>

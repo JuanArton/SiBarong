@@ -1,6 +1,7 @@
 package com.topibatu.sibarong
 
 import android.app.Application
+import com.topibatu.sibarong.injection.databaseModule
 import com.topibatu.sibarong.injection.repositoryModule
 import com.topibatu.sibarong.injection.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,8 @@ open class MyApplication : Application() {
             modules(
                 listOf(
                     repositoryModule,
-                    viewModelModule
+                    viewModelModule,
+                    databaseModule
                 )
             )
         }

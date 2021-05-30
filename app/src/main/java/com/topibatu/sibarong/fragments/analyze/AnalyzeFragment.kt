@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.topibatu.sibarong.R
+import com.topibatu.sibarong.api.DataParcel
+import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.databinding.FragmentAnalyzeBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 import kotlin.properties.Delegates
@@ -47,6 +49,10 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
                 binding.descriptionText.text = data.news
 
                 setBottomSheet(BottomSheetBehavior.STATE_EXPANDED)
+                val dataHistory = HistoryEntity(
+                    data.news
+                )
+                analyzeViewModel.insertText(dataHistory)
             })
         }
     }
