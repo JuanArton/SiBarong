@@ -1,7 +1,6 @@
 package com.topibatu.sibarong.fragments.analyze
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +38,7 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (v.id == R.id.analyzebutton) {
+        if (v.id == R.id.analyzebutton){
             val newsText = binding.newsText.text.toString()
             binding.analyzeLoadBar.visibility = View.VISIBLE
             binding.analyzebutton.visibility = View.INVISIBLE
@@ -57,7 +56,6 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
             })
         }
     }
-
 
     private fun setBottomSheet(state: Int){
         BottomSheetBehavior.from(binding.botsheet).apply{
