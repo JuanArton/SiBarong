@@ -1,5 +1,7 @@
 package com.topibatu.sibarong.fragments.analyze
 
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,8 @@ import com.topibatu.sibarong.api.DataParcel
 import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.databinding.FragmentAnalyzeBinding
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import kotlin.properties.Delegates
 
 class AnalyzeFragment : Fragment(), View.OnClickListener {
@@ -34,11 +38,13 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
         setBottomSheet(BottomSheetBehavior.STATE_COLLAPSED)
 
         binding.analyzebutton.setOnClickListener(this)
+        binding.getsnippet.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View) {
-        if (v.id == R.id.analyzebutton){
+        if (v.id == R.id.analyzebutton) {
+            setBottomSheet(BottomSheetBehavior.STATE_COLLAPSED)
             val newsText = binding.newsText.text.toString()
             binding.analyzeLoadBar.visibility = View.VISIBLE
             binding.analyzebutton.visibility = View.INVISIBLE
@@ -46,15 +52,30 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
                 binding.analyzeLoadBar.visibility = View.INVISIBLE
                 binding.analyzebutton.visibility = View.VISIBLE
 
-                binding.descriptionText.text = data.news
-
+                binding.percentage.text = try{
+                    val parsedString = parseString(data)
+                    analyzeViewModel.insertText(HistoryEntity(
+                        newsText,
+                        parsedString
+                    ))
+                    StringBuilder().append(parsedString).append("%")
+                } catch (e: Exception){
+                    "Error"
+                }
                 setBottomSheet(BottomSheetBehavior.STATE_EXPANDED)
-                val dataHistory = HistoryEntity(
-                    data.news
-                )
-                analyzeViewModel.insertText(dataHistory)
             })
         }
+        if (v.id == R.id.getsnippet){
+            val clipboard = activity?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            binding.newsText.setText(clipboard.primaryClip?.getItemAt(0)?.text)
+        }
+    }
+
+    private fun parseString(data: DataParcel): String{
+        val numb = data.news.filter { it.isDigit() || it =='.'}.toDouble()
+        val formatNumber = DecimalFormat("#.##")
+        formatNumber.roundingMode = RoundingMode.UP
+        return formatNumber.format(numb)
     }
 
     private fun setBottomSheet(state: Int){

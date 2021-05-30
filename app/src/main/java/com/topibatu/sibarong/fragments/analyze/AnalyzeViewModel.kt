@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.topibatu.sibarong.api.DataParcel
 import com.topibatu.sibarong.database.entity.HistoryEntity
-
 import com.topibatu.sibarong.repository.RepositoryInterface
 
 class AnalyzeViewModel (private val repositoryInterface: RepositoryInterface): ViewModel(){

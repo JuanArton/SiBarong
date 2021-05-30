@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red">
+        android:background="@color/white">
+
         <RelativeLayout
             android:id="@+id/logoarea"
+            android:background="@color/red"
             android:layout_width="match_parent"
-            android:gravity="left"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:gravity="left">
 
             <ImageView
                 android:id="@+id/logoImage"
@@ -44,41 +47,41 @@
         <RelativeLayout
             android:id="@+id/toolarea"
             android:layout_width="match_parent"
-            android:layout_height="200px"
-            android:layout_marginTop="60dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:gravity="center"
-            android:elevation="3dp"
-            android:background="@drawable/roundedcorner">
+            android:layout_height="60dp"
+            android:layout_below="@id/logoarea"
+            android:background="@color/grey2"
+            android:gravity="center">
+
             <Button
                 android:id="@+id/getsnippet"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/clipboard_icon"
+                android:fontFamily="@font/opensans_semibold"
                 android:src="@drawable/clipboard_icon"
                 android:text="@string/paste_from_clipboard"
                 android:textAllCaps="false"
                 android:textColor="@color/grey"
-                android:fontFamily="@font/opensans_semibold"
-                android:textSize="13sp"
-                android:drawableLeft="@drawable/clipboard_icon"
-                android:backgroundTint="@color/white">
+                android:textSize="13sp">
             </Button>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/grey2"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
             android:layout_below="@id/toolarea">
 
             <EditText
                 android:id="@+id/newsText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
                 android:ems="10"
                 android:fontFamily="@font/opensansregular"
+                android:background="@drawable/roundedcorner"
                 android:gravity="top"
                 android:hint="Input news here"
                 android:inputType="textMultiLine"
@@ -143,25 +146,10 @@
                 android:layout_below="@id/analyzebutton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
-                android:text="@string/percentage"
                 android:fontFamily="@font/opensans_semibold"
+                android:text="@string/result"
                 android:textColor="@color/green"
                 android:textSize="70sp">
-            </TextView>
-
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/percentage"
-                android:gravity="center"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="55dp"
-                android:fontFamily="@font/opensansregular"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:textSize="20sp"
-                android:text="@string/sample_description_text">
             </TextView>
         </RelativeLayout>
     </FrameLayout>

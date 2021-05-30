@@ -19,7 +19,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
     inner class ListViewHolder(private val binding: ItemViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(historyEntity: HistoryEntity) {
             with(binding){
-                tvItemTitle.text = historyEntity.text
+                tvItemTitle.text = historyEntity.textNews
             }
         }
     }

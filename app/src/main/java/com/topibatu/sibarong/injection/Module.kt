@@ -3,7 +3,7 @@ package com.topibatu.sibarong.injection
 import androidx.room.Room
 import com.topibatu.sibarong.database.Database
 import com.topibatu.sibarong.fragments.analyze.AnalyzeViewModel
-import com.topibatu.sibarong.fragments.fragment.HistoryViewModel
+import com.topibatu.sibarong.fragments.history.HistoryViewModel
 import com.topibatu.sibarong.repository.RepositoryInterface
 import com.topibatu.sibarong.repository.SiBarongRepository
 import com.topibatu.sibarong.repository.local.LocalDataSource
@@ -12,7 +12,6 @@ import com.topibatu.sibarong.utils.AppExecutors
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-
 
 val repositoryModule = module {
     single { RemoteDataSource() }

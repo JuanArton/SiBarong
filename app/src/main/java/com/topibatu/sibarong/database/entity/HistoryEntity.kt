@@ -10,5 +10,6 @@ data class HistoryEntity(
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "text")
-    var text: String
+    var textNews: String,
+    var result: String
 )
