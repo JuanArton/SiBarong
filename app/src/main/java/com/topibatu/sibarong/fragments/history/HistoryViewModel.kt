@@ -1,4 +1,4 @@
-package com.topibatu.sibarong.fragments.fragment
+package com.topibatu.sibarong.fragments.history
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

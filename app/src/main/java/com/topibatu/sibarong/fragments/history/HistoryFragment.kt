@@ -1,4 +1,4 @@
-package com.topibatu.sibarong.fragments.fragment
+package com.topibatu.sibarong.fragments.history
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.topibatu.sibarong.R
 import com.topibatu.sibarong.adapter.RecyclerViewAdapter
 import com.topibatu.sibarong.databinding.FragmentHistoryBinding
-import com.topibatu.sibarong.fragments.analyze.AnalyzeViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HistoryFragment : Fragment() {
@@ -19,7 +19,7 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHistoryBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -52,6 +52,7 @@ class HistoryFragment : Fragment() {
     }
 
     private fun setup(){
+        binding.title.text = getString(R.string.riwayat)
         binding.recylcerViewHistory.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = RecyclerViewAdapter()

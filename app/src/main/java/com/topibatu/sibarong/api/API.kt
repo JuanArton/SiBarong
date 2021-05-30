@@ -13,8 +13,8 @@ object API{
             level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else
                 HttpLoggingInterceptor.Level.NONE
         })
-        .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(120, TimeUnit.SECONDS)
+        .writeTimeout(120, TimeUnit.SECONDS)
         .build()
     private val retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
