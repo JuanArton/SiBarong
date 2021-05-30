@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.topibatu.sibarong.MainActivity
 import com.topibatu.sibarong.R
 import com.topibatu.sibarong.api.DataParcel
 import com.topibatu.sibarong.database.entity.HistoryEntity
@@ -39,7 +40,6 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
 
         binding.analyzebutton.setOnClickListener(this)
         binding.getsnippet.setOnClickListener(this)
-
     }
 
     override fun onClick(v: View) {
@@ -83,6 +83,14 @@ class AnalyzeFragment : Fragment(), View.OnClickListener {
             peekHeight = 300
             bottomSheetState = this.state
             this.state = state
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val stat = (activity as MainActivity).applyToFragment(binding)
+        if(stat){
+            setBottomSheet(BottomSheetBehavior.STATE_EXPANDED)
         }
     }
 }

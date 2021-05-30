@@ -1,13 +1,15 @@
 package com.topibatu.sibarong.fragments.history
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.topibatu.sibarong.MainActivity
 import com.topibatu.sibarong.R
 import com.topibatu.sibarong.adapter.RecyclerViewAdapter
+import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.databinding.FragmentHistoryBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -44,6 +46,11 @@ class HistoryFragment : Fragment() {
                     when (adapter) {
                         is RecyclerViewAdapter -> {
                             adapter.setData(data)
+                            adapter.setOnItemClickCallback(object : RecyclerViewAdapter.OnItemClickCallback{
+                                override fun onItemClicked(data: HistoryEntity){
+                                    (activity as MainActivity).receiveHistory(data)
+                                }
+                            })
                         }
                     }
                 }

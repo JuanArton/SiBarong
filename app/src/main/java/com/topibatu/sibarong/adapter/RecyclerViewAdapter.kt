@@ -9,11 +9,16 @@ import com.topibatu.sibarong.databinding.ItemViewBinding
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHolder>() {
 
     private val listNews = ArrayList<HistoryEntity>()
+    private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setData(data: List<HistoryEntity>){
         listNews.clear()
         listNews.addAll(data)
         notifyDataSetChanged()
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 
     inner class ListViewHolder(private val binding: ItemViewBinding): RecyclerView.ViewHolder(binding.root) {
@@ -34,7 +39,13 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.ListViewHolder, position: Int) {
         holder.bind(listNews[position])
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNews[position]) }
     }
 
     override fun getItemCount(): Int  = listNews.size
+
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: HistoryEntity)
+    }
 }
