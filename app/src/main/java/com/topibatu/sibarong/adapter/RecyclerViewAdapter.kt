@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.databinding.ItemViewBinding
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHolder>() {
+class RecyclerViewAdapter() : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHolder>() {
 
     private val listNews = ArrayList<HistoryEntity>()
     private lateinit var onItemClickCallback: OnItemClickCallback
+    private lateinit var callback: RecyclerViewCallback
 
     fun setData(data: List<HistoryEntity>){
         listNews.clear()
@@ -21,10 +22,17 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
         this.onItemClickCallback = onItemClickCallback
     }
 
+    fun setCallBack(callback: OnItemClickCallback) {
+        this.callback = callback
+    }
+
     inner class ListViewHolder(private val binding: ItemViewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(historyEntity: HistoryEntity) {
             with(binding){
                 tvItemTitle.text = historyEntity.textNews
+                deleteHistory.setOnClickListener {
+                    callback.onItemClicked(historyEntity)
+                }
             }
         }
     }
@@ -33,7 +41,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
         parent: ViewGroup,
         viewType: Int
     ): RecyclerViewAdapter.ListViewHolder {
-       val itemViewBinding = ItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemViewBinding = ItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListViewHolder(itemViewBinding)
     }
 
@@ -45,7 +53,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ListViewHol
     override fun getItemCount(): Int  = listNews.size
 
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: HistoryEntity)
+    interface OnItemClickCallback : RecyclerViewCallback {
+        override fun onItemClicked(data: HistoryEntity)
     }
 }

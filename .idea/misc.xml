@@ -26,6 +26,7 @@
         <entry key="app/src/main/res/layout/fragment_analyze.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/item_view.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/menu/navigation.xml" value="0.35833333333333334" />
       </map>
     </option>
