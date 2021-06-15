@@ -13,7 +13,7 @@ import com.topibatu.sibarong.database.entity.HistoryEntity
 import com.topibatu.sibarong.databinding.FragmentHistoryBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class HistoryFragment : Fragment() {
+class HistoryFragment : Fragment(){
     private lateinit var binding: FragmentHistoryBinding
     private val viewModel: HistoryViewModel by viewModel()
 
@@ -46,9 +46,15 @@ class HistoryFragment : Fragment() {
                     when (adapter) {
                         is RecyclerViewAdapter -> {
                             adapter.setData(data)
-                            adapter.setOnItemClickCallback(object : RecyclerViewAdapter.OnItemClickCallback{
-                                override fun onItemClicked(data: HistoryEntity){
+                            adapter.setOnItemClickCallback(object :
+                                RecyclerViewAdapter.OnItemClickCallback {
+                                override fun onItemClicked(data: HistoryEntity) {
                                     (activity as MainActivity).receiveHistory(data)
+                                }
+                            })
+                            adapter.setCallBack(object : RecyclerViewAdapter.OnItemClickCallback {
+                                override fun onItemClicked(data: HistoryEntity) {
+                                    viewModel.deleteHistory(data)
                                 }
                             })
                         }
@@ -70,4 +76,6 @@ class HistoryFragment : Fragment() {
         super.onResume()
         getContent()
     }
+
+
 }
